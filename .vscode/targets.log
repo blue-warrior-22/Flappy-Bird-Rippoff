@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Thu Aug  4 20:20:38 2022
+
+# Make data base, printed on Thu Aug  4 21:52:10 2022
 
 # Variables
 
@@ -48,7 +51,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.LOpLoJa9oj/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff
+PWD = /Users/christianbraganza/Documents/Programming/c/c++/gui/sdl/Flappy Ripoff
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -84,7 +87,7 @@ USER = christianbraganza
 # makefile
 .DEFAULT_GOAL := game
 # environment
-TERM_SESSION_ID = A85CBD7B-4701-45C2-A5C3-A3D964134912
+TERM_SESSION_ID = 7706AC7D-0F38-4C1C-9899-8D5645FDD313
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -110,7 +113,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 445
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.12941976773.12941976779.F3E1BB1C-1483-4B73-82B2-20DA38B6A1C0
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12941976773.12941976779.C9251CF0-8566-40B8-BF4C-F20E6398F3A0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -138,7 +141,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 52918
+VSCODE_PID = 69787
 # variable set hash-table stats:
 # Load=64/1024=6%, Rehash=0, Collisions=1/88=1%
 
@@ -148,9 +151,9 @@ VSCODE_PID = 52918
 
 # Directories
 
-# . (device 16777220, inode 12943087668): 13 files, no impossibilities.
+# . (device 16777220, inode 12943087668): 15 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -176,7 +179,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 20:01:36
+#  Last modified 2022-08-04 21:52:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -193,7 +196,7 @@ game:
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 2):
-	g++ main.cpp game.cpp -o main -I include/SDL2 -L lib -l SDL2-2.0.0 -l SDL2_image
+	g++ main.cpp game.cpp -o flappy_ripoff -I include/SDL2 -L lib -l SDL2-2.0.0 -l SDL2_image
 	
 
 # files hash-table stats:
@@ -209,8 +212,6 @@ game:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug  4 20:20:38 2022
+# Finished Make data base on Thu Aug  4 21:52:10 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

@@ -7,6 +7,13 @@
 	"settings": {
 		"files.associations": {
 			"iostream": "cpp"
-		}
+		},
+		"makefile.launchConfigurations": [
+			{
+				"cwd": "/Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff",
+				"binaryPath": "/Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff/main",
+				"binaryArgs": []
+			}
+		]
 	}
 }

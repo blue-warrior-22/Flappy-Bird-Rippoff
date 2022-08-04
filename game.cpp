@@ -1,7 +1,9 @@
 #include "game.hpp"
 
-SDL_Texture* playerText;
+SDL_Texture* background;
+SDL_Texture* player;
 SDL_Rect srcR, destR;
+SDL_Rect playerR;
 
 Game::Game(){}
 Game::~Game(){}
@@ -22,16 +24,19 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         
         renderer = SDL_CreateRenderer(window, -1, 0);
         if(renderer){
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
             std::cout << "Rendere Created" << std::endl;
         }
         isRunning = true;
     } else {
         isRunning = false;
     }
-    SDL_Surface* tmpSurface = IMG_Load("assets/player.png");
-    playerText = SDL_CreateTextureFromSurface(renderer, tmpSurface);
-    SDL_FreeSurface(tmpSurface);
+    SDL_Surface* bgSurface = IMG_Load("assets/nightbg.gif");
+    background = SDL_CreateTextureFromSurface(renderer, bgSurface);
+    SDL_FreeSurface(bgSurface);
+    SDL_Surface* PlayerSurface = IMG_Load("assets/player.png");
+    player = SDL_CreateTextureFromSurface(renderer, PlayerSurface);
+    SDL_FreeSurface(PlayerSurface);
+
 }
 
 void Game::handleEvents(){
@@ -50,15 +55,21 @@ void Game::handleEvents(){
 
 void Game::update(){
     count++;
-    destR.h = 32;
-    destR.w = 32;
-
+    destR.h = 550;
+    destR.w = 960;
+    playerR.w = 80;
+    playerR.h = 80;
+    playerR.y = count;
+    if(playerR.y == 510){
+        count = 0;
+    }
     std::cout << count << std::endl;
 }
 
 void Game::render(){
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, playerText, NULL, &destR);
+    SDL_RenderCopy(renderer, background, NULL, &destR);
+    SDL_RenderCopy(renderer, player, NULL, &playerR);
     SDL_RenderPresent(renderer);
 }
 

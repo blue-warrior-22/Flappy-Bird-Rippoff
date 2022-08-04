@@ -1,5 +1,5 @@
-make game --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff'
-g++ main.cpp game.cpp -o main -I include/SDL2 -L lib -l SDL2-2.0.0 -l SDL2_image
+g++ main.cpp game.cpp -o flappy_ripoff -I include/SDL2 -L lib -l SDL2-2.0.0 -l SDL2_image
 make: Leaving directory `/Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff'
  
