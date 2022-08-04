@@ -1,6 +1,9 @@
-#include<SDL2/SDL.h>
-#include<SDL2/SDL_image.h>
+#ifndef GAME_HPP
+#define GAME_HPP
+#include"SDL.h"
+#include"SDL_image.h"
 #include<iostream>
+
 
 class Game{
 
@@ -21,3 +24,4 @@ class Game{
         SDL_Window *window;
         SDL_Renderer *renderer;
 };
+#endif GAME_HPP

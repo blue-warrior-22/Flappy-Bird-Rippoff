@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "TextureManager.hpp"
 
 SDL_Texture* background;
 SDL_Texture* player;
@@ -30,12 +31,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
-    SDL_Surface* bgSurface = IMG_Load("assets/nightbg.gif");
-    background = SDL_CreateTextureFromSurface(renderer, bgSurface);
-    SDL_FreeSurface(bgSurface);
-    SDL_Surface* PlayerSurface = IMG_Load("assets/player.png");
-    player = SDL_CreateTextureFromSurface(renderer, PlayerSurface);
-    SDL_FreeSurface(PlayerSurface);
+    
+    background = TextureManager::LoadTexture("assets/nightbg.gif", renderer);
+    player = TextureManager::LoadTexture("assets/player.png", renderer);
 
 }
 
