@@ -1,5 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make game_clang --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff'
-clang++ main.cpp game.cpp TextureManager.cpp -o flappy_ripoff -I include/SDL2 -L lib -l SDL2-2.0.0 -l SDL2_image -std=c++20
+clang++ *.cpp -o flappy_ripoff -I include/SDL2 -L lib -l SDL2-2.0.0 -l SDL2_image -std=c++20
 make: Leaving directory `/Users/christianbraganza/Documents/Programming/c/c++/Gui/sdl/Flappy Ripoff'
  
