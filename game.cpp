@@ -1,10 +1,9 @@
 #include "game.hpp"
 #include "TextureManager.hpp"
+#include "GameObject.hpp"
 
-SDL_Texture* background;
-SDL_Texture* player;
-SDL_Rect srcR, destR;
-SDL_Rect playerR;
+GameObject* player;
+GameObject* background;
 
 Game::Game(){}
 Game::~Game(){}
@@ -32,8 +31,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     
-    background = TextureManager::LoadTexture("assets/nightbg.gif", renderer);
-    player = TextureManager::LoadTexture("assets/player.png", renderer);
+    player = new GameObject("assets/player.png", renderer, 0,0,64,64);
+    background = new GameObject("assets/nightbg.gif", renderer,0,0,900,540);
 
 }
 
@@ -52,22 +51,14 @@ void Game::handleEvents(){
 }
 
 void Game::update(){
-    count++;
-    destR.h = 550;
-    destR.w = 960;
-    playerR.w = 80;
-    playerR.h = 80;
-    playerR.y = count;
-    if(playerR.y == 510){
-        count = 0;
-    }
-    std::cout << count << std::endl;
+    player->Update();
+    background->Update();
 }
 
 void Game::render(){
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, background, NULL, &destR);
-    SDL_RenderCopy(renderer, player, NULL, &playerR);
+    background->Render();
+    player->Render();
     SDL_RenderPresent(renderer);
 }
 
